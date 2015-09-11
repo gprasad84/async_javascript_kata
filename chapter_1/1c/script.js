@@ -19,11 +19,18 @@ function calculate(e) {
 
 function factorial(n, callback, result) {
   setTimeout(function () {
-    result = result || n;
+      try {
 
-    if (n < 1) {
-        throw new Error('n must be greater than or equal to 1');
-    }
+        result = result || n;
+
+        if (n < 1) {
+            throw new Error('n must be greater than or equal to 1');
+        }
+      }
+      catch(e) {
+          alert(e.message);
+      }
+
 
     if (n === 1) {
         callback(result);
