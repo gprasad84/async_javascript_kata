@@ -7,12 +7,20 @@ function startLoop() {
   reset();
 
   for (var i = 1; i < 5; i++) {
-    setTimeout(function () {
-      print(i);
-    }, i * 1000);
+      dosetTimeout(i);
   }
 
 }
+
+function dosetTimeout(i)
+{
+    setTimeout(function() {
+        print(i);
+    },i*1000);
+}
+
+
+
 
 function print(i) {
   var li = document.createElement('li');
